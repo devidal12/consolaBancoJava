@@ -62,7 +62,7 @@ public class ConsolaBanco {
 }
 	
 	private void mostrarMenu() {
-		System.out.println("1.  Insertar gestor\n2.  Insertar gestores de prueba\n3.  Consultar gestor\n4.  Ver todos los gestores\n5.  Actualizar gestor \n6.  Eliminar gestores\n7.  Insertar Cliente\n8.  Obtener cliente\n9.  Obtener todos los clientes\n10. Actualizar cliente\n11. Eliminar cliente\n12. Obtener un mensajes\n13. Obtener todos los mensajes\n14. Enviar mensaje\n15. Obtener transferencia\n16. Obtener todas las transferenias\n17. Realizar transferencia \n18. Login\n0.  Salir\n");
+		System.out.println("1.  Insertar gestor\n2.  Insertar gestores de prueba\n3.  Consultar gestor\n4.  Ver todos los gestores\n5.  Actualizar gestor \n6.  Eliminar gestores\n7.  Insertar cliente\n8.  Obtener cliente\n9.  Obtener todos los clientes\n10. Actualizar cliente\n11. Eliminar cliente\n12. Obtener un mensajes\n13. Obtener todos los mensajes\n14. Enviar mensaje\n15. Obtener transferencia\n16. Obtener todas las transferencias\n17. Realizar transferencia \n18. Login\n0.  Salir\n");
 	}
 	
 	private void insertarGestor() {
@@ -412,36 +412,36 @@ public class ConsolaBanco {
 		
 		Mensaje nuevoMensaje = new Mensaje(siguienteMensaje, idOrigen , idDestino, mensaje);
 		mensajes.add(nuevoMensaje);
-		siguienteMensaje++;
 		
 		System.out.println("Mensaje creado con éxito");
+		siguienteMensaje++;
 		
 	}
 	
-//	private void obtenerTransferencia() {
-//		System.out.print("Id de la transferencia a consultar: ");
-//		int idTransferencia = teclado.nextInt();
-//		Transferencia transferenciaResultado = buscarTransferenciaPorId(idTransferencia);
-//		if(transferenciaResultado!=null) {
-//			System.out.println(transferenciaResultado);
-//		} else {
-//			System.out.println("No se pudo encontrar una transferencia con el id"+ idTransferencia);
-//		}
-//	}	
-//	
-//		
-//	private Transferencia buscarTransferenciaPorId(int idTransferencia){
-//		Transferencia transferenciaResultado = null;
-//		for(int i=0; i< transferencias.size();i++) {
-//			 Transferencia transferencia = transferencia.get(i);
-//			if(transferencia.getId()==idTransferencia) {
-//				transferenciaResultado = transferencia;
-//				return transferenciaResultado;
-//			}
-//		}		
-//		return null;
-//		
-//	}
+	private void obtenerTransferencia() {
+		System.out.print("Id de la transferencia a consultar: ");
+		int idTransferencia = teclado.nextInt();
+		Transferencia transferenciaResultado = buscarTransferenciaPorId(idTransferencia);
+		if(transferenciaResultado!=null) {
+			System.out.println(transferenciaResultado);
+		} else {
+			System.out.println("No se pudo encontrar una transferencia con el id"+ idTransferencia);
+		}
+	}	
+	
+		
+	private Transferencia buscarTransferenciaPorId(int idTransferencia){
+		Transferencia transferenciaResultado = null;
+		for(int i=0; i< transferencias.size();i++) {
+			 Transferencia transferencia = transferencias.get(i);
+			if(transferencia.getId()==idTransferencia) {
+				transferenciaResultado = transferencia;
+				return transferenciaResultado;
+			}
+		}		
+		return null;
+		
+	}
 	
 	private void obtenerTodasTransferencias() {
 		System.out.println(transferencias);
@@ -463,7 +463,6 @@ public class ConsolaBanco {
 		
 		System.out.print("Concepto: ");
 		String concepto = teclado.next();
-		siguienteMensaje++;
 		
 		System.out.print("Importe: ");
 		Double importe = teclado.nextDouble();
@@ -473,6 +472,7 @@ public class ConsolaBanco {
 		
 		Transferencia nuevaTransferencia = new Transferencia(siguienteTransferencia, idOrigen , idDestino, importe, concepto);
      	transferencias.add(nuevaTransferencia);
+     	siguienteTransferencia++;
 		
 		System.out.println("Transferencia creada con éxito");
 		
@@ -544,9 +544,9 @@ public class ConsolaBanco {
 			case 14:
 				enviarMensaje();
 				break;
-//			case 15:
-//				obtenerTransferencia();
-//				break;
+			case 15:
+				obtenerTransferencia();
+				break;
 			case 16:
 				obtenerTodasTransferencias();
 				break;

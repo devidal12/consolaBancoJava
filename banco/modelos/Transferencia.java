@@ -88,7 +88,7 @@ public class Transferencia {
 	}
 
 	public String toString() {
-		return "Transferencia{Transferencia: " + "importe: " + importe + "concepto:" +concepto + fecha +"}";
+		return "Transferencia{Transferencia: " + " importe: " + importe + " || concepto:" +concepto + "||" + fecha +"}";
 		
 	}
 	
